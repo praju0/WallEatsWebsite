@@ -153,6 +153,20 @@ nav {
   text-align: center;
   margin-top: 10px;
 }
+section h2 {
+  font-size: 28px;
+  color: #444;
+}
+
+section p {
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+ul li {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
 
 
 
