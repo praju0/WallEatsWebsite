@@ -102,5 +102,44 @@
       updateCart();
     }
   </script>
+   let cart = {};
+  let total = 0;
+
+  function addToCart(item, price) {
+    if (cart[item]) {
+      cart[item].quantity += 1;
+      cart[item].subtotal += price;
+    } else {
+      cart[item] = {
+        price: price,
+        quantity: 1,
+        subtotal: price
+      };
+    }
+    total += price;
+    updateCart();
+  }
+
+  function updateCart() {
+    const cartList = document.getElementById('cart-items');
+    const totalSpan = document.getElementById('total');
+
+    cartList.innerHTML = "";
+
+    for (let item in cart) {
+      const li = document.createElement('li');
+      li.textContent = `${item} x${cart[item].quantity} — ₹${cart[item].subtotal}`;
+      cartList.appendChild(li);
+    }
+
+    totalSpan.textContent = total;
+  }
+
+  function clearCart() {
+    cart = {};
+    total = 0;
+    updateCart();
+  }
+</script>
 </body>
 </html>
