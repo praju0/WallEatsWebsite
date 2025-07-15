@@ -64,4 +64,24 @@ button {
   border: none;
   cursor: pointer;
 }
+@media (max-width: 600px) {
+  section {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 24px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
 
