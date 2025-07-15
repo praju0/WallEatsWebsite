@@ -130,6 +130,30 @@ button {
   height: auto;
   border-radius: 8px;
 }
+.logo {
+  height: 60px;
+  margin-bottom: -10px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+header h1 {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+  font-size: 32px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+nav {
+  flex-basis: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
 
 
 
