@@ -6,36 +6,6 @@
   <title>Menu | Wall-Eats</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  <script>
-  let cart = [];
-  let total = 0;
-
-  function addToCart(item, price) {
-    cart.push({ item, price });
-    total += price;
-    updateCart();
-  }
-
-  function updateCart() {
-    const cartList = document.getElementById('cart-items');
-    const totalSpan = document.getElementById('total');
-    
-    cartList.innerHTML = "";
-    cart.forEach(c => {
-      const li = document.createElement('li');
-      li.textContent = `${c.item} - ₹${c.price}`;
-      cartList.appendChild(li);
-    });
-
-    totalSpan.textContent = total;
-  }
-
-  function clearCart() {
-    cart = [];
-    total = 0;
-    updateCart();
-  }
-</script>
 
 <body>
   <header>
@@ -61,7 +31,7 @@
         <img src="images/pizza.JPG" alt="Pizza" />
         <h3>Pizza</h3>
         <p>₹180</p>
-         <button onclick="addToCart('Pizza', 180)">Add to Cart</button>
+        <button onclick="addToCart('Pizza', 180)">Add to Cart</button>
       </div>
       <div class="menu-item">
         <img src="images/fries.JPG" alt="Fries" />
@@ -73,32 +43,64 @@
         <img src="images/noodles.JPG" alt="Noodles" />
         <h3>Hakka Noodles</h3>
         <p>₹110</p>
-         <button onclick="addToCart('Hakka Noodles', 110)">Add to Cart</button>
+        <button onclick="addToCart('Hakka Noodles', 110)">Add to Cart</button>
       </div>
-       <div class="menu-item">
+      <div class="menu-item">
         <img src="images/dosa.JPG" alt="Masala Dosa" />
         <h3>Masala Dosa</h3>
         <p>₹100</p>
-          <button onclick="addToCart('Masala Dosa', 100)">Add to Cart</button>
+        <button onclick="addToCart('Masala Dosa', 100)">Add to Cart</button>
       </div>
-       <div class="menu-item">
+      <div class="menu-item">
         <img src="images/idli.JPG" alt="Idli Vada" />
         <h3>Idli Vada</h3>
         <p>₹60</p>
-          <button onclick="addToCart('Idli Vada', 60)">Add to Cart</button>
+        <button onclick="addToCart('Idli Vada', 60)">Add to Cart</button>
       </div>
-       <hr>
 
-  <h3>Your Cart</h3>
-  <ul id="cart-items"></ul>
-  <p><strong>Total:</strong> ₹<span id="total">0</span></p>
-  <button onclick="clearCart()">Clear Cart</button>
+      <hr>
+
+      <h3>Your Cart</h3>
+      <ul id="cart-items"></ul>
+      <p><strong>Total:</strong> ₹<span id="total">0</span></p>
+      <button onclick="clearCart()">Clear Cart</button>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 Wall-Eats. All Rights Reserved.</p>
   </footer>
+
+  <!-- ✅ Move script here -->
+  <script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(item, price) {
+      cart.push({ item, price });
+      total += price;
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const totalSpan = document.getElementById('total');
+
+      cartList.innerHTML = "";
+      cart.forEach(c => {
+        const li = document.createElement('li');
+        li.textContent = `${c.item} - ₹${c.price}`;
+        cartList.appendChild(li);
+      });
+
+      totalSpan.textContent = total;
+    }
+
+    function clearCart() {
+      cart = [];
+      total = 0;
+      updateCart();
+    }
+  </script>
 </body>
 </html>
-
