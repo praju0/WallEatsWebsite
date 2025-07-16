@@ -140,7 +140,16 @@
         <p>We’ll get in touch with you shortly.</p>
       </div>
 
-      <button onclick="window.print()">🧾 Print Receipt</button>
+      <!-- Printable Receipt -->
+<button onclick="printReceipt()">🧾 Print Receipt</button>
+
+<div id="receipt" style="display: none;">
+  <h2>🧾 Wall-Eats Receipt</h2>
+  <ul id="receipt-items"></ul>
+  <p><strong>Total:</strong> ₹<span id="receipt-total">0</span></p>
+  <p>Thank you for ordering with Wall-Eats!</p>
+</div>
+
     </section>
   </main>
 
