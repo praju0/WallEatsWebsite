@@ -82,12 +82,15 @@
 
       <!-- Receipt Section -->
       <button onclick="printReceipt()">🧾 Print Receipt</button>
-      <div id="receipt" style="display:none;">
-        <h2>🧾 Wall-Eats Receipt</h2>
-        <ul id="receipt-items"></ul>
-        <p><strong>Total:</strong> ₹<span id="receipt-total">0</span></p>
-        <p>Thank you for ordering with Wall-Eats!</p>
-      </div>
+     <div id="receipt" style="display: none;">
+  <h2>🧾 Wall-Eats Receipt</h2>
+  <p><strong>Name:</strong> <span id="receipt-name"></span></p>
+  <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+  <ul id="receipt-items"></ul>
+  <p><strong>Total:</strong> ₹<span id="receipt-total">0</span></p>
+  <p>Thank you for ordering with Wall-Eats!</p>
+</div>
+
     </section>
   </main>
 
@@ -143,6 +146,13 @@
         alert("Your cart is empty!");
         return;
       }
+
+      const receiptName = document.getElementById("receipt-name");
+      const receiptEmail = document.getElementById("receipt-email");
+      const customerName = document.getElementById("customer-name").value;
+      const customerEmail = document.getElementById("customer-email").value;
+      receiptName.textContent = customerName;
+      receiptEmail.textContent = customerEmail;
 
       const receiptList = document.getElementById("receipt-items");
       const receiptTotal = document.getElementById("receipt-total");
