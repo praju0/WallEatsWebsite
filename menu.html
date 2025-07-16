@@ -19,6 +19,7 @@
   </header>
 
   <main>
+    <!-- 🍔 Fast Food Section -->
     <section>
       <h2>🍔 Fast Food</h2>
       <div class="menu-item">
@@ -47,6 +48,7 @@
       </div>
     </section>
 
+    <!-- 🥞 Breakfast Section -->
     <section>
       <h2>🥞 Breakfast</h2>
       <div class="menu-item">
@@ -61,14 +63,15 @@
         <p>₹60</p>
         <button onclick="addToCart('Idli Vada', 60)">Add to Cart</button>
       </div>
-    </section>
-     <div class="menu-item">
+      <div class="menu-item">
         <img src="images/upma.JPG" alt="Upma" />
         <h3>Upma</h3>
         <p>₹60</p>
         <button onclick="addToCart('Upma', 60)">Add to Cart</button>
       </div>
+    </section>
 
+    <!-- 🛒 Cart + Order Section -->
     <section>
       <hr />
       <h3>Your Cart</h3>
@@ -94,6 +97,7 @@
     <p>&copy; 2025 Wall-Eats. All Rights Reserved.</p>
   </footer>
 
+  <!-- JavaScript for Cart Functionality -->
   <script>
     let cart = {};
     let total = 0;
