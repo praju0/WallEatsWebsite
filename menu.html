@@ -20,9 +20,7 @@
 
   <main>
     <section>
-      <h2>Our Menu</h2>
-
-      <!-- Menu Items -->
+      <h2>🍔 Fast Food</h2>
       <div class="menu-item">
         <img src="images/burger.JPG" alt="Burger" />
         <h3>Burger</h3>
@@ -42,11 +40,15 @@
         <button onclick="addToCart('French Fries', 90)">Add to Cart</button>
       </div>
       <div class="menu-item">
-        <img src="images/noodles.JPG" alt="Hakka Noodles" />
+        <img src="images/noodles.JPG" alt="Noodles" />
         <h3>Hakka Noodles</h3>
         <p>₹110</p>
         <button onclick="addToCart('Hakka Noodles', 110)">Add to Cart</button>
       </div>
+    </section>
+
+    <section>
+      <h2>🥞 Breakfast</h2>
       <div class="menu-item">
         <img src="images/dosa.JPG" alt="Masala Dosa" />
         <h3>Masala Dosa</h3>
@@ -59,15 +61,15 @@
         <p>₹60</p>
         <button onclick="addToCart('Idli Vada', 60)">Add to Cart</button>
       </div>
+    </section>
 
-      <!-- Cart Section -->
+    <section>
       <hr />
       <h3>Your Cart</h3>
       <ul id="cart-items"></ul>
       <p><strong>Total:</strong> ₹<span id="total">0</span></p>
       <button onclick="clearCart()">Clear Cart</button>
 
-      <!-- Place Order Form -->
       <form id="order-form" onsubmit="submitOrder(event)">
         <h3>Place Your Order</h3>
         <input type="text" id="customer-name" placeholder="Your Name" required />
@@ -75,7 +77,6 @@
         <button type="submit">Place Order</button>
       </form>
 
-      <!-- Thank You Message -->
       <div id="thank-you" style="display:none; margin-top: 20px;">
         <h3>Thank you for your order! 😊</h3>
         <p>We’ll get in touch with you shortly.</p>
@@ -87,7 +88,6 @@
     <p>&copy; 2025 Wall-Eats. All Rights Reserved.</p>
   </footer>
 
-  <!-- Cart Script -->
   <script>
     let cart = {};
     let total = 0;
@@ -112,11 +112,13 @@
       const totalSpan = document.getElementById('total');
 
       cartList.innerHTML = "";
+
       for (let item in cart) {
         const li = document.createElement('li');
         li.textContent = `${item} x${cart[item].quantity} — ₹${cart[item].subtotal}`;
         cartList.appendChild(li);
       }
+
       totalSpan.textContent = total;
     }
 
@@ -127,22 +129,14 @@
     }
 
     function submitOrder(e) {
-      e.preventDefault(); // Prevent form from refreshing the page
-
-      const name = document.getElementById("customer-name").value;
-      const email = document.getElementById("customer-email").value;
+      e.preventDefault();
 
       if (Object.keys(cart).length === 0) {
-        alert("Your cart is empty!");
+        alert("Cart is empty!");
         return;
       }
 
-      // You could integrate backend or email logic here if needed
-
-      // Show thank you message
       document.getElementById("thank-you").style.display = "block";
-
-      // Clear cart and form
       clearCart();
       document.getElementById("order-form").reset();
     }
