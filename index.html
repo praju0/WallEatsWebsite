@@ -6,23 +6,26 @@
   <title>Wall-E | Smart Waiter Robot</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* Welcome Section */
-    .welcome-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 50px 20px;
-    }
+   /* Welcome Section */
+.welcome-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  /* Add the background image here */
+  background: url('images/walle-hero.jpg') no-repeat center center;
+  background-size: cover;
+}
 
-    /* Background only behind text box */
-    .welcome-overlay {
-      background: url('images/walle-hero.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 40px;
-      border-radius: 10px;
-      max-width: 900px;
-      color: white;
-    }
+/* Text container with a semi-transparent background */
+.welcome-overlay {
+  /* Remove the background image from here */
+  background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 900px;
+  color: white;
+}
 
     .welcome-section h2 {
       font-size: 2.5rem;
@@ -96,3 +99,4 @@
 
 </body>
 </html>
+
