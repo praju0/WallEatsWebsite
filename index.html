@@ -4,59 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wall-Eats | Smart Waiter Robot</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="font-sans text-gray-800">
 
   <!-- Header -->
-  <header>
-    <img src="images/logo.png" alt="Wall-Eats Logo" class="logo">
-    <h1>Wall-Eats</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="menu.html">Menu</a>
+  <header class="flex items-center justify-between p-4 bg-white shadow">
+    <div class="flex items-center gap-3">
+      <img src="images/logo.png" alt="Wall-Eats Logo" class="h-12">
+      <h1 class="text-2xl font-bold">Wall-Eats</h1>
+    </div>
+    <nav class="flex gap-6">
+      <a href="index.html" class="hover:text-yellow-500">Home</a>
+      <a href="about.html" class="hover:text-yellow-500">About</a>
+      <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+      <a href="menu.html" class="hover:text-yellow-500">Menu</a>
     </nav>
   </header>
 
-  <!-- Main Section -->
-  <main>
+  <!-- Hero Section with Background -->
+  <section 
+    class="relative bg-cover bg-center min-h-screen flex items-center justify-center text-center text-white"
+    style="background-image: url('images/walle-hero.jpg');">
 
-    <!-- Welcome Section -->
-    <section>
-      <h2>Welcome to Wall-Eats!</h2>
-      <p>Hungry? Let <strong>Wall-Eats</strong> serve you! 🍽️</p>
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
 
-      <p>Meet our smart and friendly waiter robot designed to bring your favorite meals right to your table — no waiting, no confusion, just smooth service with a robotic smile.</p>
+    <!-- Content -->
+    <div class="relative z-10 max-w-3xl px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">
+        Hungry? Let Wall-Eats Serve You!
+      </h1>
+      <p class="text-lg md:text-xl mb-6">
+        Fast, friendly, and contactless food delivery with a robotic smile.
+      </p>
+      <a href="menu.html" 
+         class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+         Start Your Order
+      </a>
+    </div>
+  </section>
 
-      <p>At Wall-Eats, we believe dining should be delightful. That’s why we built a robot that blends technology with hospitality — making restaurant experiences faster, safer, and more fun.</p>
+  <!-- About Robot Section -->
+  <section class="max-w-5xl mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6 text-center">About Wall-Eats</h2>
+    <p class="mb-4">
+      Meet our smart and friendly waiter robot designed to bring your favorite meals right to your table — no waiting, no confusion, just smooth service with a robotic smile.
+    </p>
+    <p class="mb-4">
+      At Wall-Eats, we believe dining should be delightful. That’s why we built a robot that blends technology with hospitality — making restaurant experiences faster, safer, and more fun.
+    </p>
+    <ul class="list-disc pl-6 mb-4">
+      <li>🤖 Friendly robot with smooth tray delivery</li>
+      <li>🛣️ Follows predefined paths to navigate the space</li>
+      <li>📦 Designed for multiple orders and safe delivery</li>
+      <li>🙌 Perfect for restaurants, events, and exhibitions</li>
+    </ul>
+    <img src="images/robot.JPG" alt="Wall-Eats Robot" class="w-full rounded-lg shadow-lg mt-6">
+  </section>
 
-      <p>From the kitchen to your seat, Wall-Eats follows a guided path, avoids obstacles, and delivers food with precision. Whether you're in a café, a smart restaurant, or a tech fair — our robot adds a modern twist to traditional service.</p>
-
-      <ul>
-        <li>🤖 Friendly robot with smooth tray delivery</li>
-        <li>🛣️ Follows predefined paths to navigate the space</li>
-        <li>📦 Designed for multiple orders and safe delivery</li>
-        <li>🙌 Perfect for restaurants, events, and exhibitions</li>
-      </ul>
-
-      <p>So sit back, relax, and let Wall-Eats bring the food to you. Welcome to the future of dining!</p>
-
-      <img src="images/robot.JPG" alt="Wall-Eats Robot" width="100%">
-    </section>
-
-    <!-- Order Section -->
-    <section class="order-start">
-      <h2>Ready to Eat?</h2>
-      <p>Browse our menu and place your order in just a few clicks!</p>
-      <a href="menu.html" class="order-button">Start Your Order</a>
-    </section>
-
-  </main>
+  <!-- Order Section -->
+  <section class="bg-yellow-100 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Eat?</h2>
+    <p class="mb-6">Browse our menu and place your order in just a few clicks!</p>
+    <a href="menu.html" 
+       class="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold py-3 px-8 rounded-full shadow-lg transition duration-300">
+       Start Your Order
+    </a>
+  </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="bg-gray-900 text-white text-center py-4">
     <p>&copy; 2025 Wall-Eats. All Rights Reserved.</p>
   </footer>
 
