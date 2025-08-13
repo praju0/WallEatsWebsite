@@ -1,17 +1,53 @@
-@@ -7,61 +7,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wall-E | Smart Waiter Robot</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Welcome Section Background */
+    .welcome-section {
+      background: url('images/robot.JPG') no-repeat center center/cover;
+      padding: 80px 20px;
+      color: white;
+      text-align: center;
+    }
+    .welcome-overlay {
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 40px;
+      border-radius: 10px;
+      display: inline-block;
+      max-width: 900px;
+    }
+    .welcome-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .welcome-section p,
+    .welcome-section ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .welcome-section ul {
+      list-style: none;
+      padding: 0;
+    }
+    .welcome-section ul li {
+      margin: 8px 0;
+    }
+  </style>
 </head>
 <body>
 
   <!-- Header -->
   <header>
-    <img src="images/logo.png" alt="Wall-Eats Logo" class="logo">
-    <h1>Wall-Eats</h1>
+    <img src="images/logo.png" alt="Wall-E Logo" class="logo">
+    <h1>Wall-E</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-       <a href="menu.html">Menu</a>
       <a href="menu.html">Menu</a>
     </nav>
   </header>
@@ -20,47 +56,21 @@
   <main>
 
     <!-- Welcome Section -->
-    <section>
-<section>
-  <h2>Welcome to Wall-Eats!</h2>
-  
-  <p>Hungry? Let <strong>Wall-Eats</strong> serve you! 🍽️</p>
-      <h2>Welcome to Wall-Eats!</h2>
-      <p>Hungry? Let <strong>Wall-Eats</strong> serve you! 🍽️</p>
-
-  <p>Meet our smart and friendly waiter robot designed to bring your favorite meals right to your table — no waiting, no confusion, just smooth service with a robotic smile.</p>
-      <p>Meet our smart and friendly waiter robot designed to bring your favorite meals right to your table — no waiting, no confusion, just smooth service with a robotic smile.</p>
-
-  <p>At Wall-Eats, we believe dining should be delightful. That’s why we built a robot that blends technology with hospitality — making restaurant experiences faster, safer, and more fun.</p>
-      <p>At Wall-Eats, we believe dining should be delightful. That’s why we built a robot that blends technology with hospitality — making restaurant experiences faster, safer, and more fun.</p>
-
-  <p>From the kitchen to your seat, Wall-Eats follows a guided path, avoids obstacles, and delivers food with precision. Whether you're in a café, a smart restaurant, or a tech fair — our robot adds a modern twist to traditional service.</p>
-      <p>From the kitchen to your seat, Wall-Eats follows a guided path, avoids obstacles, and delivers food with precision. Whether you're in a café, a smart restaurant, or a tech fair — our robot adds a modern twist to traditional service.</p>
-
-  <ul>
-    <li>🤖 Friendly robot with smooth tray delivery</li>
-    <li>🛣️ Follows predefined paths to navigate the space</li>
-    <li>📦 Designed for multiple orders and safe delivery</li>
-    <li>🙌 Perfect for restaurants, events, and exhibitions</li>
-  </ul>
-      <ul>
-        <li>🤖 Friendly robot with smooth tray delivery</li>
-        <li>🛣️ Follows predefined paths to navigate the space</li>
-        <li>📦 Designed for multiple orders and safe delivery</li>
-        <li>🙌 Perfect for restaurants, events, and exhibitions</li>
-      </ul>
-
-  <p>So sit back, relax, and let Wall-Eats bring the food to you. Welcome to the future of dining!</p>
-      <p>So sit back, relax, and let Wall-Eats bring the food to you. Welcome to the future of dining!</p>
-
-  <img src="images/robot.JPG" alt="Wall-Eats Robot" width="100%">
-</section>
-      <section class="order-start">
-  <h2>Ready to Eat?</h2>
-  <p>Browse our menu and place your order in just a few clicks!</p>
-  <a href="menu.html" class="order-button">Start Your Order</a>
-</section>
-      <img src="images/robot.JPG" alt="Wall-Eats Robot" width="100%">
+    <section class="welcome-section">
+      <div class="welcome-overlay">
+        <h2>Welcome to Wall-E!</h2>
+        <p>Hungry? Let <strong>Wall-E</strong> serve you! 🍽️</p>
+        <p>Meet our smart and friendly waiter robot designed to bring your favorite meals right to your table — no waiting, no confusion, just smooth service with a robotic smile.</p>
+        <p>At Wall-E, we believe dining should be delightful. That’s why we built a robot that blends technology with hospitality — making restaurant experiences faster, safer, and more fun.</p>
+        <p>From the kitchen to your seat, Wall-E follows a guided path, avoids obstacles, and delivers food with precision. Whether you're in a café, a smart restaurant, or a tech fair — our robot adds a modern twist to traditional service.</p>
+        <ul>
+          <li>🤖 Friendly robot with smooth tray delivery</li>
+          <li>🛣️ Follows predefined paths to navigate the space</li>
+          <li>📦 Designed for multiple orders and safe delivery</li>
+          <li>🙌 Perfect for restaurants, events, and exhibitions</li>
+        </ul>
+        <p>So sit back, relax, and let Wall-E bring the food to you. Welcome to the future of dining!</p>
+      </div>
     </section>
 
     <!-- Order Section -->
@@ -70,21 +80,21 @@
       <a href="menu.html" class="order-button">Start Your Order</a>
     </section>
 
-    
-     <section>
-    <h2>Place Your Order</h2>
-    <form action="mailto:yourmail@example.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Your Name" required><br><br>
-      <input type="text" name="order" placeholder="Your Order" required><br><br>
-      <button type="submit">Place Order</button>
-    </form>
-  </section>
+    <!-- Place Order Form -->
+    <section>
+      <h2>Place Your Order</h2>
+      <form action="mailto:yourmail@example.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <input type="text" name="order" placeholder="Your Order" required><br><br>
+        <button type="submit">Place Order</button>
+      </form>
+    </section>
     
   </main>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Wall-Eats. All Rights Reserved.</p>
+    <p>&copy; 2025 Wall-E. All Rights Reserved.</p>
   </footer>
 
 </body>
