@@ -32,3 +32,17 @@ function printReceipt() {
   // Reload page after print to bring back original content
   location.reload();
 }
+function placeOrder(table, order) {
+  fetch("https://script.google.com/macros/s/AKfycbxPxx8vIgWv0frjG5LIQ7eM__dVewNLXEbXC-BWOQzqZeawlWSHI47WS0anSupazoeTYw/exec", {
+    method: "POST",
+    body: JSON.stringify({ table: table, order: order })
+  })
+  .then(res => res.json())
+  .then(data => {
+    alert("✅ Order placed! Row: " + data.row);
+  })
+  .catch(err => console.error(err));
+}
+
+
+
