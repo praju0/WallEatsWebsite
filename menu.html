@@ -72,25 +72,26 @@
         <h3>Place Your Order</h3>
         <input type="text" id="customer-name" placeholder="Your Name" required />
         <input type="email" id="customer-email" placeholder="Your Email" required />
+        <input type="number" id="table-number" placeholder="Table Number" required />
         <button type="submit">Place Order</button>
       </form>
 
       <div id="thank-you" style="display:none; margin-top: 20px;">
         <h3>Thank you for your order! 😊</h3>
-        <p>We’ll get in touch with you shortly.</p>
+        <p>We’ll deliver your order to <strong>Table <span id="thankyou-table"></span></strong> shortly.</p>
       </div>
 
       <!-- Receipt Section -->
       <button onclick="printReceipt()">🧾 Print Receipt</button>
-     <div id="receipt" style="display: none;">
-  <h2>🧾 Wall-Eats Receipt</h2>
-  <p><strong>Name:</strong> <span id="receipt-name"></span></p>
-  <p><strong>Email:</strong> <span id="receipt-email"></span></p>
-  <ul id="receipt-items"></ul>
-  <p><strong>Total:</strong> ₹<span id="receipt-total">0</span></p>
-  <p>Thank you for ordering with Wall-Eats!</p>
-</div>
-
+      <div id="receipt" style="display: none;">
+        <h2>🧾 Wall-Eats Receipt</h2>
+        <p><strong>Name:</strong> <span id="receipt-name"></span></p>
+        <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+        <p><strong>Table Number:</strong> <span id="receipt-table"></span></p>
+        <ul id="receipt-items"></ul>
+        <p><strong>Total:</strong> ₹<span id="receipt-total">0</span></p>
+        <p>Thank you for ordering with Wall-Eats!</p>
+      </div>
     </section>
   </main>
 
@@ -101,6 +102,7 @@
   <script>
     let cart = {};
     let total = 0;
+    let tableNumber = "";
 
     function addToCart(item, price) {
       if (cart[item]) {
@@ -137,7 +139,16 @@
         alert("Cart is empty!");
         return;
       }
+
+      const customerName = document.getElementById("customer-name").value;
+      const customerEmail = document.getElementById("customer-email").value;
+      tableNumber = document.getElementById("table-number").value;
+
+      // Show thank you message
       document.getElementById("thank-you").style.display = "block";
+      document.getElementById("thankyou-table").textContent = tableNumber;
+
+      // Reset form
       document.getElementById("order-form").reset();
     }
 
@@ -149,10 +160,14 @@
 
       const receiptName = document.getElementById("receipt-name");
       const receiptEmail = document.getElementById("receipt-email");
+      const receiptTable = document.getElementById("receipt-table");
+
       const customerName = document.getElementById("customer-name").value;
       const customerEmail = document.getElementById("customer-email").value;
+
       receiptName.textContent = customerName;
       receiptEmail.textContent = customerEmail;
+      receiptTable.textContent = tableNumber;
 
       const receiptList = document.getElementById("receipt-items");
       const receiptTotal = document.getElementById("receipt-total");
